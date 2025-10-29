@@ -1,20 +1,20 @@
-import 'dart:math';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
-  final List<String> badgelist = const <String>[
-    '🗿',
-    '😂',
-    '🦖',
-    '🤯',
-    '🔥',
-    '💀',
-    '🤔',
-    '🚗',
-    '🐉',
+  final List<String> badgeList = const <String>[
+    'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
+    'https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
+    'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2074',
+    'https://images.unsplash.com/photo-1761322053661-b2981f5a0e88?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987',
+    'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169',
+    'https://plus.unsplash.com/premium_photo-1761331960515-bd6f42eb8c3d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=964',
+    'https://images.unsplash.com/photo-1761512169411-523f89a7762a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1035',
+    'https://plus.unsplash.com/premium_photo-1760482557508-398a23d01dfe?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=991',
+    'https://images.unsplash.com/photo-1760915170483-3e943d42f29a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987',
+    'https://images.unsplash.com/photo-1761199664578-7d2f9e1edc0a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987',
   ];
 
   @override
@@ -33,16 +33,12 @@ class AboutMe extends StatelessWidget {
                 /**
                  * IMAGE PROFILE
                  */
-                //   Image.asset('assets/profile.png',
-                //   width: 100,
-                //   height: 100,
-                // ),
                 CircleAvatar(
                   radius: 50,
-                  backgroundImage: NetworkImage('assets/profile.jpeg'),
+                  backgroundImage: NetworkImage('Assets/profile.jpeg'),
                 ),
                 /**
-                 * TEXT NAME
+                 * Name
                  */
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
@@ -51,45 +47,90 @@ class AboutMe extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Chunq',
+                      fontFamily: 'Poppins',
                     ),
                   ),
                 ),
                 /**
-                 * SPACER
+                 * Text Lorem
                  */
                 SizedBox(height: 10),
-                /**
-                 * TEXT ABOUT
-                 */
                 Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                  style: TextStyle(),
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint   occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Poppins',
+                  ),
                   textAlign: TextAlign.justify,
                 ),
+                SizedBox(height: 10),
                 /**
-                 * SPACER
+                 * CARD ANDROID
                  */
-                SizedBox(height: 15),
-                /**
-                 * CARD CONTAINER ANDROID
-                 */
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(20),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.greenAccent,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Icon(
+                                    Icons.android,
+                                    size: 75,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Andoroid Project',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Poppins',
+                                        ),
+                                      ),
+                                      Text(
+                                        '10 APP',
+                                        style: TextStyle(fontFamily: 'Poppins'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Container(
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
                                   decoration: BoxDecoration(
                                     color: Colors.greenAccent,
                                     borderRadius: BorderRadius.circular(20),
@@ -100,235 +141,233 @@ class AboutMe extends StatelessWidget {
                                     color: Colors.white,
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 4.0,
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'GAME PROJECT',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Game Project',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Poppins',
+                                        ),
                                       ),
-                                    ),
-                                    Text('10 Gaes'),
-                                  ],
+                                      Text(
+                                        '10 GAMES',
+                                        style: TextStyle(fontFamily: 'Poppins'),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.black12, width: 2),
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 2,
-                                offset: Offset(2, 3),
-                                color: Colors.black,
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 75,
-                                height: 75,
-                                decoration: BoxDecoration(
-                                  color: Colors.greenAccent,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Icon(
-                                  Icons.android,
-                                  color: Colors.white,
-                                  size: 50,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Android Project\'s',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text('10 APK'),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(color: Colors.black),
-                    child: Text(
-                      'Schedule'.toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        letterSpacing: 2,
-                        color: Colors.white,
-                      ),
-                    ),
+                    ],
                   ),
                 ),
-                //  ROW SCHEDULE
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          // width: double.infinity ngasih lebar full
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  'Belajar',
-                                  style: TextStyle(fontWeight: FontWeight.w700),
-                                ),
-                                Icon(Icons.timer, size: 30),
-                                Text(
-                                  '07.30 - 14.30',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    /**
-                     * MEMBACA
-                     */
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  'MEMBACA',
-                                  style: TextStyle(fontWeight: FontWeight.w700),
-                                ),
-                                Icon(Icons.book, size: 30),
-                                Text(
-                                  '20.00 - 21.00',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  'TIDUR',
-                                  style: TextStyle(fontWeight: FontWeight.w700),
-                                ),
-                                Icon(Icons.bed, size: 30),
-                                Text(
-                                  '21.30 - 03.15',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
                 Container(
                   width: double.infinity,
-                  decoration: BoxDecoration(color: Colors.cyanAccent),
-
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Text(
-                      'BADGES',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        letterSpacing: 5,
-                        fontWeight: FontWeight.bold,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: .0),
+                        child: Text(
+                          'Schedule'.toUpperCase(),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            letterSpacing: 5,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
-                      textAlign: TextAlign.center,
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      // Belajar
+                      Expanded(
+                        flex: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            // width: double.infinity, ==>  mengasih lebar full
+                            decoration: BoxDecoration(
+                              color: Colors.greenAccent,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Belajar',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ),
+                                Icon(Icons.timer, size: 30),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    '07.30 - 14.30',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      // MEMBACA
+                      Expanded(
+                        flex: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.greenAccent,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Column(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'MEMBACA',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ),
+                                Icon(Icons.book, size: 30),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    '20.00 - 21.00',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Tidur
+                      Expanded(
+                        flex: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.greenAccent,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Column(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'TIDUR',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ),
+                                Icon(Icons.bed, size: 30),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    '21.30 - 03.15',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlueAccent,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    'BADGES',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      letterSpacing: 5,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 SizedBox(
                   height: 110,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: badgelist.map((element) {
+                    children: badgeList.map((Url) {
                       return Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            color: Colors.redAccent
+                          width: 150,
+                          height: 150,
+                          child: CircleAvatar(
+                            radius: 10,
+                            backgroundImage: NetworkImage('${Url}'),
                           ),
-                            child: Center(
-                              child: Text(
-                                '${element}',
-                              style: TextStyle(
-                              fontSize: 60,
-                                                        ),),
-                            ),
                         ),
                       );
                     }).toList(),
+                  ),
+                ),
+                SizedBox(
+                  height: 110,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: badgeList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage('${badgeList[index]}'
+                          ),
+                          radius: 100,
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
