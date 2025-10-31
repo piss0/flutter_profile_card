@@ -1,21 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/detailProfile.dart';
+import 'package:flutter_application_1/detailProfile.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
-  final List<String> badgeList = const <String>[
-    'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
-    'https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
-    'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2074',
+  final List<String> imageList = const <String>[
+    'https://images.unsplash.com/photo-1761405378558-3688471ba000?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1064',
+    'https://images.unsplash.com/photo-1761576882205-ac0ec9df45c2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1045',
+    'https://images.unsplash.com/photo-1761562964790-77f9f5ac45b9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987',
     'https://images.unsplash.com/photo-1761322053661-b2981f5a0e88?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987',
-    'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169',
+    'https://images.unsplash.com/photo-1761330461729-6e5aacbf11b8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1006',
     'https://plus.unsplash.com/premium_photo-1761331960515-bd6f42eb8c3d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=964',
     'https://images.unsplash.com/photo-1761512169411-523f89a7762a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1035',
     'https://plus.unsplash.com/premium_photo-1760482557508-398a23d01dfe?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=991',
     'https://images.unsplash.com/photo-1760915170483-3e943d42f29a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987',
     'https://images.unsplash.com/photo-1761199664578-7d2f9e1edc0a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987',
   ];
+
+  final title = 'Hafiz Rizky';
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,7 @@ class AboutMe extends StatelessWidget {
                  */
                 CircleAvatar(
                   radius: 50,
-                  backgroundImage: NetworkImage('Assets/profile.jpeg'),
+                  backgroundImage: NetworkImage('Assets/fotoku.jpg'),
                 ),
                 /**
                  * Name
@@ -43,7 +47,7 @@ class AboutMe extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
                   child: Text(
-                    'Hafiz Rizky'.toUpperCase(),
+                    title.toUpperCase(),
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -169,6 +173,7 @@ class AboutMe extends StatelessWidget {
                     ],
                   ),
                 ),
+
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -193,6 +198,50 @@ class AboutMe extends StatelessWidget {
                     ],
                   ),
                 ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (builder) => DetailProfile()),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.greenAccent,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'DETAIL PROFILE',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DetailProfile(Title: title,)),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Detail Profile'),
+                    ),
+                  ),
+                ),
+
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -338,7 +387,7 @@ class AboutMe extends StatelessWidget {
                   height: 110,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: badgeList.map((Url) {
+                    children: imageList.map((Url) {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
@@ -357,13 +406,12 @@ class AboutMe extends StatelessWidget {
                   height: 110,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: badgeList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      Padding(
+                    itemCount: imageList.length,
+                    itemBuilder: (BuildContext, int index) {
+                      return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: CircleAvatar(
-                          backgroundImage: NetworkImage('${badgeList[index]}'
-                          ),
+                          backgroundImage: NetworkImage('${imageList[index]}'),
                           radius: 100,
                         ),
                       );
